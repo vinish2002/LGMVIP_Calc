@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="ihEcbWW_MLmOyQngEN9PzU44dsMQEw7Hu9fQWQtQVvA" />
+    <link rel="stylesheet" href="./index.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://kit.fontawesome.com/be1c87c3f5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="shortcut icon" href="./calculator.png" type="image/x-icon">
+    <title>Calculator</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <h1>Calculator <i class="uil uil-calculator-alt"></i></h1>
+        </div>
+        <div class="nav-elements">
+            <h4><a href="./index.html">Home <i class="uil uil-home"></i></a></h4>
+            <h4><a href="https://github.com/vinish2002">GitHub <i class="uil uil-github-alt"></i></a></h4>
+            <h4><a href="https://www.linkedin.com/in/vinish-s-06b389229/">LinkedIn <i class="uil uil-linkedin"></i></a></h4>
+        </div>
+    </nav>
+    <div class="container" onselectstart="return false">
+        <div class="calculator">
+            <input type="text" id="display">
+            <div class="row1">
+                <button onclick="addNumber(7)">7</button>
+                <button onclick="addNumber(8)">8</button>
+                <button onclick="addNumber(9)">9</button>
+                <button onclick="addOperator('+')">+</button>
+            </div>
+            <div class="row2">
+                <button onclick="addNumber(4)">4</button>
+                <button onclick="addNumber(5)">5</button>
+                <button onclick="addNumber(6)">6</button>
+                <button onclick="addOperator('-')">-</button>
+            </div>
+            <div class="row3">
+                <button onclick="addNumber(1)">1</button>
+                <button onclick="addNumber(2)">2</button>
+                <button onclick="addNumber(3)">3</button>
+                <button onclick="addOperator('*')">x</button>
+            </div>
+            <div class="row4">
+                <button onclick="addNumber(0)">0</button>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="addOperator('/')">/</button>
+            </div>
+        </div>
+    </div>
+    <footer>Designed by Vinish</footer>
+
+    <script src="index.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
